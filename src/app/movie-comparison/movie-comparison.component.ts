@@ -1,19 +1,22 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MoviesServiceService} from '../movies-service.service';
 import {CommonServiceService} from '../common-service.service';
+import {MatButtonToggleChange} from '@angular/material';
 
 @Component({
   selector: 'app-movie-comparison',
   templateUrl: './movie-comparison.component.html',
   styleUrls: ['./movie-comparison.component.css']
 })
-export class MovieComparisonComponent implements OnInit {
+export class MovieComparisonComponent implements OnInit,OnChanges {
   moviesData: any;
   movie_1_array;
   movie_2_array;
   private movie_1: string;
   private movie_2: string;
   displayedColumns: string[] = ['Day', 'Date', 'Daily Gross', ];
+  isEnabled: boolean = true;
+  link = "https://i.imgur.com/FS2zB4l.png";
   constructor(private api: MoviesServiceService, private common: CommonServiceService) {
   }
 
@@ -41,5 +44,12 @@ export class MovieComparisonComponent implements OnInit {
     this.movie_2_array = this.moviesData[this.movie_2];
     console.log(this.movie_1_array);
     console.log(this.movie_2_array);
+  }
+  toggleView(change: MatButtonToggleChange){
+    this.isEnabled = change.value;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.isEnabled)
   }
 }

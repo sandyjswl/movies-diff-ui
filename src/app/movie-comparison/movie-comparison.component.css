@@ -13,7 +13,9 @@
 table {
   width: 60%;
 }
-
+mat-card{
+  width: 60%;
+}
 /*.container-m {*/
 /*  height: 100%;*/
 /*  display: flex;*/
