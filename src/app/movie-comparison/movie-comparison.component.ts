@@ -24,12 +24,12 @@ export class MovieComparisonComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.api
-      .getStubbedResponse()
+      .getMoviesDetails()
       .subscribe(
         data => {
           this.moviesData = data;
           this.extractData();
-          console.log(data);
+          // console.log(data);
           this.isLoading = false;
         },
         err => {
