@@ -1,0 +1,24 @@
+<div class="main">
+  <!--  <img src="https://www.telegraph.co.uk/content/dam/cricket/2019/09/23/TELEMMGLPICT000210609026_trans_NvBQzQNjv4BqPoURMoge4zyCm5RemNushxQBpepFijut11mfN7yf7CI.jpeg?imwidth=1400" alt="" />-->
+  <!--  <div class="container" id="wrapper">-->
+  <h1 class="card-header">Movies-Diff</h1>
+  <div class="form-group">
+    <div class="form-group col-lg-3">
+      <label for="movie_1">Enter Movie 1</label>
+      <input type="text" class="form-control" id="movie_1" [(ngModel)]="movie1" required #box
+             (keyup)="onKey(box.value)">
+    </div>
+    <div class="form-group col-lg-3">
+
+      <label for="movie_2">Enter Movie 2</label>
+      <input type="text" class="form-control" id="movie_2" [(ngModel)]="movie2" required #box
+             (keyup)="onKey(box.value)">
+    </div>
+    <div class="form-group col-lg-3">
+      <button type="submit" class="btn btn-success" (click)="submitName()" style="align:right">Submit</button>
+    </div>
+  </div>
+  <div>
+  </div>
+</div>
+<!--</div>-->

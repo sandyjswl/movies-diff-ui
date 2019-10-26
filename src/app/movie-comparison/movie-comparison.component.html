@@ -1,0 +1,24 @@
+<div *ngIf="movie_1_array && movie_2_array" class="container" >
+  <div class="row">
+    <div class="col-xs-6">
+      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_1}}</p>
+      <p class="card-header"> Date ->      Day -> Daily Gross</p>
+
+      <div *ngFor="let day of movie_1_array" >
+        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>
+        <p>-------------------------------------------------</p>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_2}}</p>
+      <p class="card-header"> Date ->      Day -> Daily Gross</p>
+
+      <div *ngFor="let day of movie_2_array">
+        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>
+        <p>-------------------------------------------------</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

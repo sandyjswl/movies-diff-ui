@@ -2,15 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { MovieSelectionComponent } from './movie-selection/movie-selection.component';
+import { MovieComparisonComponent } from './movie-comparison/movie-comparison.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import {MoviesServiceService} from './movies-service.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovieSelectionComponent,
+    MovieComparisonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [MoviesServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
