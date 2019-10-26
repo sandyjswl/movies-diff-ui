@@ -12,8 +12,8 @@ export class MovieComparisonComponent implements OnInit, OnChanges {
   moviesData: any;
   movie_1_array;
   movie_2_array;
-  private movie_1: string;
-  private movie_2: string;
+   movie_1: string;
+   movie_2: string;
   displayedColumns: string[] = ['Day', 'Date', 'Daily Gross',];
   isEnabled: boolean = true;
   link = 'https://i.imgur.com/FS2zB4l.png';
