@@ -1,18 +1,49 @@
-#parent_div_1, #parent_div_2, #parent_div_3{
-  width:100px;
-  height:100px;
-  border:1px solid red;
-  margin-right:10px;
-  float:left;
-}
-.child_div_1{
-  float:left;
-  margin-right:5px;
+/*#parent_div_1, #parent_div_2, #parent_div_3{*/
+/*  width:100px;*/
+/*  height:100px;*/
+/*  border:1px solid red;*/
+/*  margin-right:10px;*/
+/*  float:left;*/
+/*}*/
+/*.child_div_1{*/
+/*  float:left;*/
+/*  margin-right:5px;*/
+/*}*/
+
+table {
+  width: 60%;
 }
 
-.container {
-  height: 100%;
+/*.container-m {*/
+/*  height: 100%;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+
+#wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+#left {
+  flex: 1;
+
+}
+
+#right {
+  flex: 1;
+  display: inline-block;
+  width: 70%;
+  border: 1px solid grey;
+  float: right !important;
+}
+
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+  left:10%;
+  padding: 1em;
 }

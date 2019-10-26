@@ -13,7 +13,7 @@ export class MovieComparisonComponent implements OnInit {
   movie_2_array;
   private movie_1: string;
   private movie_2: string;
-
+  displayedColumns: string[] = ['Day', 'Date', 'Daily Gross', ];
   constructor(private api: MoviesServiceService, private common: CommonServiceService) {
   }
 

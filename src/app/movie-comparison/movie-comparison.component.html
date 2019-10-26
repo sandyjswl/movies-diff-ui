@@ -1,24 +1,87 @@
-<div *ngIf="movie_1_array && movie_2_array" class="container" >
-  <div class="row">
-    <div class="col-xs-6">
-      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_1}}</p>
-      <p class="card-header"> Date ->      Day -> Daily Gross</p>
+<!--<div *ngIf="movie_1_array && movie_2_array" class="container" >-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-6">-->
+<!--      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_1}}</p>-->
+<!--&lt;!&ndash;      <p class="card-header"> Date ->      Day -> Daily Gross</p>&ndash;&gt;-->
+<!--      <mat-card> Date ->     Day -> Daily Gross</mat-card>-->
+<!--      <div *ngFor="let day of movie_1_array" >-->
+<!--        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>-->
+<!--        <p>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-xs-6">-->
+<!--      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_2}}</p>-->
+<!--      <p class="card-header"> Date ->      Day -> Daily Gross</p>-->
 
-      <div *ngFor="let day of movie_1_array" >
-        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>
-        <p>-------------------------------------------------</p>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_2}}</p>
-      <p class="card-header"> Date ->      Day -> Daily Gross</p>
+<!--      <div *ngFor="let day of movie_2_array">-->
+<!--        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>-->
+<!--        <p>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div *ngIf="movie_1_array && movie_2_array" class="row">
+  <div class="col" >
+    <table mat-table [dataSource]="movie_1_array" class="mat-elevation-z8">
 
-      <div *ngFor="let day of movie_2_array">
-        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>
-        <p>-------------------------------------------------</p>
-      </div>
-    </div>
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Day">
+        <th mat-header-cell *matHeaderCellDef> Day </th>
+        <td mat-cell *matCellDef="let element"> {{element.Day}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Daily Gross">
+        <th mat-header-cell *matHeaderCellDef> Daily Gross </th>
+        <td mat-cell *matCellDef="let element"> {{element.Daily}} </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
   </div>
+
+  <div class="col" >
+    <table mat-table [dataSource]="movie_2_array" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Day">
+        <th mat-header-cell *matHeaderCellDef> Day </th>
+        <td mat-cell *matCellDef="let element"> {{element.Day}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Daily Gross">
+        <th mat-header-cell *matHeaderCellDef> Daily Gross </th>
+        <td mat-cell *matCellDef="let element"> {{element.Daily}} </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+
 </div>
-
-
