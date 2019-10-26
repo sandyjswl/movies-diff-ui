@@ -1,5 +1,5 @@
 
-<div>
+<div class="selection">
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [value]="isEnabled" (change)="toggleView($event)">
     <mat-button-toggle [value]="true">Table View</mat-button-toggle>
     <mat-button-toggle [value]="false">Graphical View</mat-button-toggle>
@@ -72,7 +72,7 @@
 
 <div *ngIf="movie_1_array && movie_2_array && !isEnabled" class="row">
 <mat-card>
-  <img mat-card-image src="{{link}}" alt="Graph">
+  <img mat-card-image src="{{link}}" alt="Graph" class="image">
 </mat-card>
 </div>
 

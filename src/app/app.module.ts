@@ -9,7 +9,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import {MoviesServiceService} from './movies-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonToggleModule, MatCardModule, MatProgressSpinnerModule, MatTableModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatFormFieldModule, MatInputModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatTableModule, MatToolbarModule
+} from '@angular/material';
+import {FlexModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -27,7 +36,13 @@ import {MatButtonToggleModule, MatCardModule, MatProgressSpinnerModule, MatTable
     MatCardModule,
     MatTableModule,
     MatButtonToggleModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexModule
   ],
   providers: [MoviesServiceService],
   bootstrap: [AppComponent]

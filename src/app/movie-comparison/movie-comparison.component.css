@@ -62,3 +62,21 @@ mat-card{
   bottom: 0;
   right: 0;
 }
+
+.selection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+mat-card image{
+  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 80%;
+}
+
+.image{
+  height: 900px; /* adjust as needed */
+  width: 1700px;
+}
