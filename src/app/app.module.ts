@@ -9,7 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import {MoviesServiceService} from './movies-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonToggleModule, MatCardModule, MatTableModule} from '@angular/material';
+import {MatButtonToggleModule, MatCardModule, MatProgressSpinnerModule, MatTableModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import {MatButtonToggleModule, MatCardModule, MatTableModule} from '@angular/mat
     BrowserAnimationsModule,
     MatCardModule,
     MatTableModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [MoviesServiceService],
   bootstrap: [AppComponent]

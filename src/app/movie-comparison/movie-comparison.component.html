@@ -1,32 +1,11 @@
-<!--<div *ngIf="movie_1_array && movie_2_array" class="container" >-->
-<!--  <div class="row">-->
-<!--    <div class="col-xs-6">-->
-<!--      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_1}}</p>-->
-<!--&lt;!&ndash;      <p class="card-header"> Date ->      Day -> Daily Gross</p>&ndash;&gt;-->
-<!--      <mat-card> Date ->     Day -> Daily Gross</mat-card>-->
-<!--      <div *ngFor="let day of movie_1_array" >-->
-<!--        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>-->
-<!--        <p>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-xs-6">-->
-<!--      <p class="modal-header font-weight-bolder">Movie Name: {{this.movie_2}}</p>-->
-<!--      <p class="card-header"> Date ->      Day -> Daily Gross</p>-->
 
-<!--      <div *ngFor="let day of movie_2_array">-->
-<!--        <p class="btn-outline-info"> {{day.Date}} -> {{day.Day}} -> {{day.Daily}}</p>-->
-<!--        <p>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 <div>
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [value]="isEnabled" (change)="toggleView($event)">
     <mat-button-toggle [value]="true">Table View</mat-button-toggle>
     <mat-button-toggle [value]="false">Graphical View</mat-button-toggle>
   </mat-button-toggle-group>
-
 </div>
+
 <div *ngIf="movie_1_array && movie_2_array && isEnabled" class="row">
   <div class="col">
     <mat-card>{{movie_1}}</mat-card>
@@ -89,23 +68,12 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
-
 </div>
 
 <div *ngIf="movie_1_array && movie_2_array && !isEnabled" class="row">
 <mat-card>
-  <img mat-card-image src="{{link}}" alt="Photo of a Shiba Inu">
+  <img mat-card-image src="{{link}}" alt="Graph">
 </mat-card>
 </div>
 
-
-
-<!--<div *ngIf="isEnabled">-->
-<!--  hello world-->
-<!--  {{isEnabled}}-->
-<!--</div>-->
-
-<!--<div *ngIf="!isEnabled">-->
-<!--  world hello-->
-<!--</div>-->
-
+<mat-spinner *ngIf="isLoading" class="loading-indicator" ></mat-spinner>
