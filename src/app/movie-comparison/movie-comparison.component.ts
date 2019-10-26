@@ -12,11 +12,11 @@ export class MovieComparisonComponent implements OnInit, OnChanges {
   moviesData: any;
   movie_1_array;
   movie_2_array;
-   movie_1: string;
-   movie_2: string;
+  movie_1: string;
+  movie_2: string;
   displayedColumns: string[] = ['Day', 'Date', 'Daily Gross',];
   isEnabled: boolean = true;
-  link = 'https://i.imgur.com/FS2zB4l.png';
+  link: string;
   isLoading: boolean = true;
 
   constructor(private api: MoviesServiceService, private common: CommonServiceService) {
@@ -45,6 +45,7 @@ export class MovieComparisonComponent implements OnInit, OnChanges {
     this.movie_2 = this.common.movie_2;
     this.movie_1_array = this.moviesData[this.movie_1];
     this.movie_2_array = this.moviesData[this.movie_2];
+    this.link = this.moviesData['Link'];
     console.log(this.movie_1_array);
     console.log(this.movie_2_array);
   }
