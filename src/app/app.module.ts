@@ -19,12 +19,14 @@ import {
   MatTableModule, MatToolbarModule
 } from '@angular/material';
 import {FlexModule} from '@angular/flex-layout';
+import { MovieNotFoundComponent } from './movie-not-found/movie-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieSelectionComponent,
-    MovieComparisonComponent
+    MovieComparisonComponent,
+    MovieNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {MoviesServiceService} from '../movies-service.service';
 import {CommonServiceService} from '../common-service.service';
 import {MatButtonToggleChange} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-movie-comparison',
@@ -18,8 +19,9 @@ export class MovieComparisonComponent implements OnInit, OnChanges {
   isEnabled: boolean = true;
   link: string;
   isLoading: boolean = true;
+  error = false;
 
-  constructor(private api: MoviesServiceService, private common: CommonServiceService) {
+  constructor(private api: MoviesServiceService, private common: CommonServiceService, private router: Router) {
   }
 
   ngOnInit() {
@@ -33,21 +35,23 @@ export class MovieComparisonComponent implements OnInit, OnChanges {
           this.isLoading = false;
         },
         err => {
-          console.log(err);
+          this.isLoading = false
+          this.error = true;
+          this.routeTo();
         }
       );
 
   }
 
   private extractData() {
-    console.log('extract');
+    // console.log('extract');
     this.movie_1 = this.common.movie_1;
     this.movie_2 = this.common.movie_2;
     this.movie_1_array = this.moviesData[this.movie_1];
     this.movie_2_array = this.moviesData[this.movie_2];
     this.link = this.moviesData['Link'];
-    console.log(this.movie_1_array);
-    console.log(this.movie_2_array);
+    // console.log(this.movie_1_array);
+    // console.log(this.movie_2_array);
   }
 
   toggleView(change: MatButtonToggleChange) {
@@ -55,6 +59,11 @@ export class MovieComparisonComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.isEnabled);
+    // console.log(this.isEnabled);
+  }
+
+  private routeTo() {
+    // console.log("routing")
+    this.router.navigate(['notFound']);
   }
 }

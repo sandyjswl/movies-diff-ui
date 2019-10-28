@@ -11,12 +11,12 @@ import {Router} from '@angular/router';
 })
 export class MovieSelectionComponent implements OnInit {
 
-  constructor(private common: CommonServiceService, private fb: FormBuilder, private movieService: MoviesServiceService, private router: Router) {
-  }
+  constructor(private common: CommonServiceService, private fb: FormBuilder, private movieService: MoviesServiceService, private router: Router) {}
 
   movieForm: any;
-  movie1: string;
-  movie2: string;
+  movie1: string ='';
+  movie2: string='';
+  movieEntered: any;
 
   ngOnInit() {
     this.movieForm = this.fb.group({});
@@ -31,5 +31,10 @@ export class MovieSelectionComponent implements OnInit {
   }
 
   onKey(value: string) {
+  }
+
+  getDetails(): boolean {
+    let s = this.movie1 === '' || this.movie2 === '';
+    return s;
   }
 }

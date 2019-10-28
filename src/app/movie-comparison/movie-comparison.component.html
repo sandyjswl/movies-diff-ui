@@ -1,5 +1,5 @@
 
-<div class="selection">
+<div class="selection" *ngIf="movie_1_array && movie_2_array">
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [value]="isEnabled" (change)="toggleView($event)">
     <mat-button-toggle [value]="true">Table View</mat-button-toggle>
     <mat-button-toggle [value]="false">Graphical View</mat-button-toggle>

@@ -22,7 +22,7 @@ export class MoviesServiceService {
   }
 
   getMoviesDetails() {
-    console.log('called');
+    // console.log('called');
     let movie_1_name = this.detailsService.movie_1;
     let movie_2_name = this.detailsService.movie_2;
     const base_url = 'https://shielded-cove-67444.herokuapp.com/movies/graph?';
@@ -35,7 +35,7 @@ export class MoviesServiceService {
       return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
     }).join('&');
 
-    console.log(base_url + queryString);
+    // console.log(base_url + queryString);
 
     const endpoint = base_url + queryString;
 
@@ -45,7 +45,7 @@ export class MoviesServiceService {
   }
 
   getStubbedResponse() {
-    console.log('called');
+    // console.log('called');
 
     const endpoint = 'https://shielded-cove-67444.herokuapp.com/movies/stub'
 

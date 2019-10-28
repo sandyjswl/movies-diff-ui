@@ -1,17 +1,16 @@
+<div class="example-container">
+  <mat-form-field>
+    <label>
+      <input matInput placeholder="Enter Movie 1" required='true' [(ngModel)]="movie1">
+    </label>
+  </mat-form-field>
 
-  <div class="example-container" >
-    <mat-form-field>
-      <label >
-        <input matInput placeholder="Enter Movie 1" [(ngModel)]="movie1">
-      </label>
-    </mat-form-field>
-
-    <mat-form-field>
-      <label >
-        <input matInput placeholder="Enter Movie 2" [(ngModel)]="movie2">
-      </label>
-    </mat-form-field>
-    <button mat-flat-button color="primary" (click)="submitName()">Submit</button>
-  </div>
+  <mat-form-field>
+    <label>
+      <input matInput placeholder="Enter Movie 2" required="true" [(ngModel)]="movie2">
+    </label>
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="submitName()" [disabled]="getDetails()">Submit</button>
+</div>
 
 
