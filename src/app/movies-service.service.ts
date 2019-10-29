@@ -11,10 +11,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class MoviesServiceService {
+  baseUrl = 'https://shielded-cove-67444.herokuapp.com/movies/graph?';
+
   constructor(private http: HttpClient, private detailsService: CommonServiceService) {
   }
-
-  const;
 
   private extractData(res: Response) {
     let body = res;
@@ -22,35 +22,26 @@ export class MoviesServiceService {
   }
 
   getMoviesDetails() {
-    // console.log('called');
-    let movie_1_name = this.detailsService.movie_1;
-    let movie_2_name = this.detailsService.movie_2;
-    const base_url = 'https://shielded-cove-67444.herokuapp.com/movies/graph?';
-    var params = {
-      movie_1: movie_1_name,
-      movie_2: movie_2_name,
-    };
+    const queryParameter = this.getQueryParams();
 
-    let queryString = Object.keys(params).map((key) => {
-      return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-    }).join('&');
-
-    // console.log(base_url + queryString);
-
-    const endpoint = base_url + queryString;
+    const endpoint = this.baseUrl + queryParameter;
 
     return this.http.get(endpoint, httpOptions).pipe(
       map(this.extractData)
     );
   }
 
-  getStubbedResponse() {
-    // console.log('called');
+  private getQueryParams() {
+    const firstMovie = this.detailsService.firstMovie;
+    const secondMovie = this.detailsService.secondMovie;
 
-    const endpoint = 'https://shielded-cove-67444.herokuapp.com/movies/stub'
+    const parameters = {
+      movie_1: firstMovie,
+      movie_2: secondMovie,
+    };
 
-    return this.http.get(endpoint, httpOptions).pipe(
-      map(this.extractData)
-    );
+    return Object.keys(parameters).map((key) => {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(parameters[key]);
+    }).join('&');
   }
 }

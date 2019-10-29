@@ -4,8 +4,8 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class CommonServiceService {
-  movie_1: string;
-  movie_2: string;
+  firstMovie: string;
+  secondMovie: string;
 
   constructor() {
   }

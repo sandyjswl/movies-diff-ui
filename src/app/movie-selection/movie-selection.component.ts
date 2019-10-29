@@ -9,32 +9,21 @@ import {Router} from '@angular/router';
   templateUrl: './movie-selection.component.html',
   styleUrls: ['./movie-selection.component.css']
 })
-export class MovieSelectionComponent implements OnInit {
+export class MovieSelectionComponent {
 
-  constructor(private common: CommonServiceService, private fb: FormBuilder, private movieService: MoviesServiceService, private router: Router) {}
-
-  movieForm: any;
-  movie1: string ='';
-  movie2: string='';
-  movieEntered: any;
-
-  ngOnInit() {
-    this.movieForm = this.fb.group({});
+  constructor(private common: CommonServiceService, private movieService: MoviesServiceService, private router: Router) {
   }
 
+  movie1 = '';
+  movie2 = '';
 
-  submitName() {
-    this.common.movie_1 = this.movie1;
-    this.common.movie_2 = this.movie2;
-    // this.movieService.getMoviesDetails();
+  submitMovies() {
+    this.common.firstMovie = this.movie1;
+    this.common.secondMovie = this.movie2;
     this.router.navigate(['compare']);
   }
 
-  onKey(value: string) {
-  }
-
-  getDetails(): boolean {
-    let s = this.movie1 === '' || this.movie2 === '';
-    return s;
+  areBothMoviesEntered(): boolean {
+    return this.movie1 === '' || this.movie2 === '';
   }
 }

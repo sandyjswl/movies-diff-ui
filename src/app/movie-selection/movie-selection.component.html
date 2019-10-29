@@ -10,7 +10,7 @@
       <input matInput placeholder="Enter Movie 2" required="true" [(ngModel)]="movie2">
     </label>
   </mat-form-field>
-  <button mat-flat-button color="primary" (click)="submitName()" [disabled]="getDetails()">Submit</button>
+  <button mat-flat-button color="primary" (click)="submitMovies()" [disabled]="areBothMoviesEntered()">Submit</button>
 </div>
 
 
